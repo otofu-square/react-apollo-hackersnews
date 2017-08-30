@@ -5,6 +5,7 @@
   "license": "MIT",
   "devDependencies": {
     "@types/node": "^8.0.26",
+    "fuse-box": "^2.2.2",
     "ts-node": "^3.3.0",
     "typescript": "^2.4.2"
   }
