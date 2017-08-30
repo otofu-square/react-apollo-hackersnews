@@ -3,6 +3,9 @@
   "version": "0.0.1",
   "repository": "ssh://git@github.com/otofu-square/react-apollo-chat-app.git",
   "license": "MIT",
+  "scripts": {
+    "build": "ts-node fuse.ts"
+  },
   "devDependencies": {
     "@types/node": "^8.0.26",
     "fuse-box": "^2.2.2",
