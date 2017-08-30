@@ -2,5 +2,10 @@
   "name": "react-apollo-chat-app",
   "version": "0.0.1",
   "repository": "ssh://git@github.com/otofu-square/react-apollo-chat-app.git",
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "@types/node": "^8.0.26",
+    "ts-node": "^3.3.0",
+    "typescript": "^2.4.2"
+  }
 }
