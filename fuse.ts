@@ -12,6 +12,10 @@ const fuse = FuseBox.init({
   ],
 });
 
-fuse.bundle("bundle").instructions(`>index.tsx`);
+fuse.dev({
+  port: 3000,
+});
+
+fuse.bundle("bundle").instructions(`>index.tsx`).hmr();
 
 fuse.run();
