@@ -21,6 +21,7 @@ fuse.dev({
 
 fuse
   .bundle("bundle")
+  .target("browser")
   .instructions(`>index.tsx`)
   .hmr();
 
