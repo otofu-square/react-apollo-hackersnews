@@ -1,9 +1,10 @@
 import * as React from "react";
+import { QueryProps } from "react-apollo";
 
 import { ILink } from "../models/Link";
 import Link from "./Link";
 
-interface IProps {
+export interface IProps extends QueryProps {
   links: ILink[];
 }
 
