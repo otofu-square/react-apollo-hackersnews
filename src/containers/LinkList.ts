@@ -1,7 +1,6 @@
 import { gql, graphql } from "react-apollo";
 
-import LinkList, { IProps } from "../components/LinkList";
-import { ILink } from "../models/Link";
+import LinkList from "../components/LinkList";
 
 const ALL_LINKS_QUERY = gql`
   query AllLinksQuery {
@@ -16,4 +15,4 @@ const ALL_LINKS_QUERY = gql`
 
 export default graphql(ALL_LINKS_QUERY, {
   name: "allLinksQuery",
-})(LinkList as any);
+})(LinkList);

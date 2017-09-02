@@ -1,14 +1,26 @@
 import * as React from "react";
 
-interface IProps {
-  description: string;
-  url: string;
-}
+class Link extends React.Component {
+  public props: {
+    link: {
+      description: string;
+      url: string;
+    };
+  };
 
-const Link = ({ description, url }: IProps) => (
-  <div>
-    {description} ({url})
-  </div>
-);
+  public render() {
+    return (
+      <div>
+        <div>
+          {this.props.link.description} ({this.props.link.url})
+        </div>
+      </div>
+    );
+  }
+
+  public voteForLink = async () => {
+    console.log("ok");
+  }
+}
 
 export default Link;
