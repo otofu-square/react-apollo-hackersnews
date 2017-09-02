@@ -1,26 +1,30 @@
 import * as React from "react";
+import { QueryProps } from "react-apollo";
 
+import { IResponse } from "../containers/LinkList";
+import { ILink } from "../models/Link";
 import Link from "./Link";
 
-class LinkList extends React.Component {
-  public render() {
-    const linksToRender = [
-      {
-        id: "1",
-        description: "The Coolest GraphQL Backend 😎",
-        url: "https://www.graph.cool",
-      },
-      {
-        id: "2",
-        description: "The Best GraphQL Client",
-        url: "http://dev.apollodata.com/",
-      },
-    ];
-
-    return (
-      <div>{linksToRender.map(link => <Link key={link.id} link={link} />)}</div>
-    );
-  }
+interface IProps {
+  allLinksQuery: {
+    allLinks: ILink[];
+  } & QueryProps;
 }
+
+const LinkList = ({ allLinksQuery }: IProps) => {
+  if (allLinksQuery && allLinksQuery.loading) {
+    return <div>Loading</div>;
+  }
+  if (allLinksQuery && allLinksQuery.error) {
+    return <div>Error</div>;
+  }
+  const linksToRender = allLinksQuery.allLinks;
+
+  return (
+    <div>
+      {linksToRender.map((link: any) => <Link key={link.id} link={link} />)}
+    </div>
+  );
+};
 
 export default LinkList;
