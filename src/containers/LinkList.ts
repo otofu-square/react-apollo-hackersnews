@@ -1,8 +1,19 @@
-import { gql, graphql } from "react-apollo";
+import { gql, graphql, QueryProps } from "react-apollo";
 
 import LinkList from "../components/LinkList";
+import { ILink } from "../models/Link";
 
-const ALL_LINKS_QUERY = gql`
+interface IResponse {
+  allLinks: ILink[];
+}
+
+interface IInputProps {}
+
+interface IProps {
+  allLinksQuery: IResponse & QueryProps;
+}
+
+export const ALL_LINKS_QUERY = gql`
   query AllLinksQuery {
     allLinks {
       id
@@ -13,6 +24,6 @@ const ALL_LINKS_QUERY = gql`
   }
 `;
 
-export default graphql(ALL_LINKS_QUERY, {
+export default graphql<IResponse, IInputProps, IProps>(ALL_LINKS_QUERY, {
   name: "allLinksQuery",
 })(LinkList);

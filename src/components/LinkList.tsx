@@ -1,7 +1,6 @@
 import * as React from "react";
 import { QueryProps } from "react-apollo";
 
-import { IResponse } from "../containers/LinkList";
 import { ILink } from "../models/Link";
 import Link from "./Link";
 
