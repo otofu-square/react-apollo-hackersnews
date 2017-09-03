@@ -10,19 +10,11 @@ interface IProps {
   } & QueryProps;
 }
 
-const LinkList = ({ allLinksQuery }: IProps) => {
-  if (allLinksQuery && allLinksQuery.loading) {
-    return <div>Loading</div>;
-  }
-  if (allLinksQuery && allLinksQuery.error) {
-    return <div>Error</div>;
-  }
-  const linksToRender = allLinksQuery.allLinks;
-
+const LinkList = ({ allLinksQuery: { loading, error, allLinks } }: IProps) => {
+  if (loading) return <div>Loading</div>;
+  if (error) return <div>Error</div>;
   return (
-    <div>
-      {linksToRender.map((link: any) => <Link key={link.id} link={link} />)}
-    </div>
+    <div>{allLinks.map((link: any) => <Link key={link.id} link={link} />)}</div>
   );
 };
 
