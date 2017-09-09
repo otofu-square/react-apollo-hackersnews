@@ -1,6 +1,13 @@
 import * as React from "react";
+import { MutationFunc } from "react-apollo";
 
-class CreateLink extends React.Component {
+import { ILink } from "../models/Link";
+
+interface IProps {
+  createLinkMutation: MutationFunc<ILink>;
+}
+
+class CreateLink extends React.Component<IProps> {
   public state = {
     description: "",
     url: "",
@@ -30,7 +37,15 @@ class CreateLink extends React.Component {
     );
   }
 
-  public createLink = async () => ({});
+  public createLink = async () => {
+    const { description, url } = this.state;
+    await this.props.createLinkMutation({
+      variables: {
+        description,
+        url,
+      },
+    });
+  }
 }
 
 export default CreateLink;
