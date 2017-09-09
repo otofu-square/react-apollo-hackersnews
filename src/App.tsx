@@ -1,7 +1,7 @@
 import * as React from "react";
 
-import LinkList from "./containers/LinkList";
+import CreateLink from "./containers/CreateLink";
 
-const App = () => <LinkList />;
+const App = () => <CreateLink />;
 
 export default App;
