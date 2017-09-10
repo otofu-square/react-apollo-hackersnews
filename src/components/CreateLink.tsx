@@ -1,5 +1,6 @@
 import * as React from "react";
 import { MutationFunc } from "react-apollo";
+import { RouteComponentProps } from "react-router-dom";
 
 import { ILink } from "../models/Link";
 
@@ -7,7 +8,7 @@ interface IProps {
   createLinkMutation: MutationFunc<ILink>;
 }
 
-class CreateLink extends React.Component<IProps> {
+class CreateLink extends React.Component<IProps & RouteComponentProps<{}>> {
   public state = {
     description: "",
     url: "",
@@ -45,6 +46,7 @@ class CreateLink extends React.Component<IProps> {
         url,
       },
     });
+    this.props.history.push("/");
   }
 }
 
