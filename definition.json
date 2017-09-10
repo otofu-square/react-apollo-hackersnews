@@ -1,0 +1,11 @@
+{
+  "modules": [
+    {
+      "name": "",
+      "content": "types: ./types.graphql\nfunctions: {}\npermissions:\n- operation: File.read\n- operation: File.create\n- operation: File.update\n- operation: File.delete\n- operation: Link.read\n- operation: Link.create\n- operation: Link.update\n- operation: Link.delete\n- operation: User.read\n- operation: User.create\n- operation: User.update\n- operation: User.delete\nrootTokens: []\n",
+      "files": {
+        "./types.graphql": "type Link implements Node {\n  url: String!\n  description: String!\n  createdAt: DateTime!\n  id: ID! @isUnique\n  updatedAt: DateTime!\n}\n\ntype File implements Node {\n  contentType: String!\n  createdAt: DateTime!\n  id: ID! @isUnique\n  name: String!\n  secret: String! @isUnique\n  size: Int!\n  updatedAt: DateTime!\n  url: String! @isUnique\n}\n\ntype User implements Node {\n  createdAt: DateTime!\n  email: String @isUnique\n  id: ID! @isUnique\n  password: String\n  updatedAt: DateTime!\n}"
+      }
+    }
+  ]
+}

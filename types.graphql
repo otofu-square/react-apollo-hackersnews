@@ -1,6 +1,3 @@
-# project: cj70ifw01111c0138b9rq2w2z
-# version: 2
-
 type Link implements Node {
   url: String!
   description: String!
@@ -22,6 +19,8 @@ type File implements Node {
 
 type User implements Node {
   createdAt: DateTime!
+  email: String @isUnique
   id: ID! @isUnique
+  password: String
   updatedAt: DateTime!
 }
