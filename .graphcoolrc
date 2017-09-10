@@ -2,4 +2,4 @@ default: dev
 environments:
   dev:
     projectId: cj70ifw01111c0138b9rq2w2z
-    version: 3
+    version: 4
