@@ -2,9 +2,9 @@ import * as React from "react";
 import { Route, RouteComponentProps, Switch } from "react-router-dom";
 
 import Header from "./components/Header";
-import Login from "./components/Login";
 import CreateLink from "./containers/CreateLink";
 import LinkList from "./containers/LinkList";
+import Login from "./containers/Login";
 
 const App = () => (
   <div className="center w85">
