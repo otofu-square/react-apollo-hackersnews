@@ -42,11 +42,9 @@ class Login extends React.Component {
             className="pointer button"
             onClick={() => this.setState({ login: !this.state.login })}
           >
-            {this.state.login ? (
-              "need to create an account?"
-            ) : (
-              "already have an account?"
-            )}
+            {this.state.login
+              ? "need to create an account?"
+              : "already have an account?"}
           </div>
         </div>
       </div>
