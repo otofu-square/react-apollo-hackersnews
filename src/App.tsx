@@ -8,7 +8,6 @@ import Login from "./containers/Login";
 
 const App = () => (
   <div className="center w85">
-    // Avoid typing error on TS
     <Header {...{} as RouteComponentProps<{}>} />
     <div className="ph3 pv1 background-gray">
       <Switch>
