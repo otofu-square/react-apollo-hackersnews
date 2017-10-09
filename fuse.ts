@@ -1,4 +1,4 @@
-import { FuseBox, WebIndexPlugin } from "fuse-box";
+import { EnvPlugin, FuseBox, WebIndexPlugin } from "fuse-box";
 
 const fuse = FuseBox.init({
   homeDir: "src",
@@ -9,9 +9,20 @@ const fuse = FuseBox.init({
       title: "Apollo sample app",
       template: "src/index.html",
     }),
+    EnvPlugin({
+      GRAPHCOOL_ENDPOINT: process.env.GRAPHCOOL_ENDPOINT,
+    }),
   ],
 });
 
-fuse.bundle("bundle").instructions(`>index.tsx`);
+fuse.dev({
+  port: 3000,
+});
+
+fuse
+  .bundle("bundle")
+  .target("browser")
+  .instructions(`>index.tsx`)
+  .hmr();
 
 fuse.run();

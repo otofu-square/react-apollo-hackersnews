@@ -6,7 +6,9 @@
     "arrow-parens": [true, "ban-single-arg-parens"],
     "no-console": false,
     "no-reference": false,
-    "object-literal-sort-keys": false
+    "no-empty-interface": false,
+    "object-literal-sort-keys": false,
+    "curly": false
   },
   "rulesDirectory": []
 }
